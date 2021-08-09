@@ -24,8 +24,10 @@ div.content {
     background-color: white;
     max-width: 500px;
     min-height: 80%;
+    max-height: 90%;
     width: 80%;
     border-radius: 20px;
+    overflow: auto;
     box-shadow: 10px 10px 10px #888888;
     transition: all 0.5s linear;
 }
@@ -33,4 +35,69 @@ div.content {
 div.content:hover {
     box-shadow: 20px 20px 10px #888888;
     transition: all 0.5s linear;
+}
+
+h3 {
+    border-bottom: #aaaaaa 1px solid;
+    margin-bottom: 0em;
+    padding: 0.5em;
+    text-align: left;
+}
+
+div.todo {
+    background-color: #b7ef6085;
+    height: 50%;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+div.done {
+    background-color: #eeeeeeb5;
+    height: 50%;
+    width: 95%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+li {
+    background-color: white;
+    margin: 0.5em;
+    padding: 0.7em;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 5px;
+}
+
+li.todo {
+    border: white 2px solid;
+    transition: all 0.5s linear;
+}
+
+li.todo:hover {
+    border: yellowgreen 2px solid;
+    transition: all 0.5s linear;
+}
+
+li.done {
+    border: white 2px solid;
+    transition: all 0.5s linear;
+}
+
+li.done:hover {
+    border: #aaaaaa 2px solid;
+    transition: all 0.5s linear;
+}
+
+ul.todo {
+    list-style: none;
+    text-align: center;
+    margin-top: 0em;
+    padding: 0.5em;
+}
+
+ul.done {
+    list-style: none;
+    text-align: left;
+    margin-top: 0.5em;
 }
