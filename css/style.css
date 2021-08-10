@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "YouYuan";
 }
 
 body {
@@ -72,6 +73,8 @@ li {
 li.todo {
     border: white 2px solid;
     transition: all 0.5s linear;
+    font-size: large;
+    font-weight: bold;
 }
 
 li.todo:hover {
@@ -82,11 +85,18 @@ li.todo:hover {
 li.done {
     border: white 2px solid;
     transition: all 0.5s linear;
+    font-size: large;
+    color: rgb(164, 164, 164);
+    font-weight: bold;
 }
 
 li.done:hover {
     border: #aaaaaa 2px solid;
     transition: all 0.5s linear;
+}
+
+li.addLine {
+    text-decoration: line-through;
 }
 
 ul.todo {
@@ -98,6 +108,7 @@ ul.todo {
 
 ul.done {
     list-style: none;
-    text-align: left;
-    margin-top: 0.5em;
+    text-align: center;
+    margin-top: 0em;
+    padding: 0.5em;
 }

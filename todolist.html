@@ -7,25 +7,81 @@
     <title>TodoList</title>
     <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript">
+        var todolist = new Array("Saab", "Volvo", "BMW");
+        var donelist = new Array("Flat", "Leopard", "Honda");
+        $(document).ready(
+            function() {
+                // var todolist = new Array("Saab", "Volvo", "BMW");
+                // var donelist = new Array("Flat", "Leopard", "Honda");
+                // for (var i = 0; i < todolist.length; i++) {
+                //     $("ul.todo").append('<li class="todo">' + todolist[i] + "</li>");
+                // }
+                // for (var i = 0; i < todolist.length; i++) {
+                //     $("ul.done").append('<li class="done">' + donelist[i] + "</li>");
+                // }
+                getArr();
+                $(".todo").on('click', 'li', // 动态监测元素
+                    function() {
+                        // alert($(this).text());
+                        for (var i = 0; i < todolist.length; i++) {
+                            if (todolist[i] === $(this).text()) {
+                                donelist.push(todolist[i]);
+                                todolist.splice(i, 1);
+                                $(this).remove();
+                                $("ul.done").append('<li class="done addLine">' + donelist[donelist.length - 1] + "</li>");
+                            }
+                        }
+                        // getArr();
+                    }
+                );
+                $(".done").on('click', 'li', // 动态监测元素
+                    function() {
+                        // alert($(this).text());
+                        for (var i = 0; i < donelist.length; i++) {
+                            if (donelist[i] === $(this).text()) {
+                                todolist.push(donelist[i]);
+                                donelist.splice(i, 1);
+                                $(this).remove();
+                                $("ul.todo").append('<li class="todo">' + todolist[todolist.length - 1] + "</li>");
+                            }
+                        }
+                        // getArr();
+                    }
+                );
+            }
+        );
+        function getArr() {
+            // var todolist = new Array("Saab", "Volvo", "BMW");
+            // var donelist = new Array("Flat", "Leopard", "Honda");
+            $("ul.todo").empty();
+            for (var i = 0; i < todolist.length; i++) {
+                $("ul.todo").append('<li class="todo">' + todolist[i] + "</li>");
+            }
+            for (var i = 0; i < todolist.length; i++) {
+                $("ul.done").append('<li class="done addLine">' + donelist[i] + "</li>");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="content">
         <div class="todo">
             <h3>待完成事项</h3>
             <ul class="todo">
+                <!-- <li class="todo">This is the todo list</li>
                 <li class="todo">This is the todo list</li>
-                <li class="todo">This is the todo list</li>
-                <li class="todo">This is the todo list</li>
+                <li class="todo">This is the todo list</li> -->
             </ul>
         </div>
         <div class="done">
             <h3>已完成事项</h3>
-            <ul class="todo">
+            <ul class="done">
+                <!-- <li class="done">12456862</li>
                 <li class="done">12456862</li>
                 <li class="done">12456862</li>
                 <li class="done">12456862</li>
-                <li class="done">12456862</li>
-                <li class="done">12456862</li>
+                <li class="done">12456862</li> -->
             </ul>
         </div>
     </div>
