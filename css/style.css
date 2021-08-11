@@ -112,3 +112,24 @@ ul.done {
     margin-top: 0em;
     padding: 0.5em;
 }
+
+img.mark_img {
+    height: 20px;
+    float: left;
+}
+
+img.delete_img {
+    height: 20px;
+    content: 30px;
+    float: right;
+}
+
+div.window {
+    height: 30%;
+    width: 40%;
+    position: fixed;
+    background-color: white;
+    border: black 2px solid;
+    border-radius: 5px;
+    display: none;
+}

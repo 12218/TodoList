@@ -15,12 +15,18 @@
                 // var todolist = new Array("Saab", "Volvo", "BMW");
                 // var donelist = new Array("Flat", "Leopard", "Honda");
                 // for (var i = 0; i < todolist.length; i++) {
-                //     $("ul.todo").append('<li class="todo">' + todolist[i] + "</li>");
+                //     $("ul.todo").append('<li class="todo">' + todolist[i] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
                 // }
                 // for (var i = 0; i < todolist.length; i++) {
-                //     $("ul.done").append('<li class="done">' + donelist[i] + "</li>");
+                //     $("ul.done").append('<li class="done">' + donelist[i] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
                 // }
                 getArr();
+                $(".delete_img").on('click',
+                    function() {
+                        alert("window");
+                        // $("div.window").css("display", "block");
+                    }
+                );
                 $(".todo").on('click', 'li', // 动态监测元素
                     function() {
                         // alert($(this).text());
@@ -29,7 +35,7 @@
                                 donelist.push(todolist[i]);
                                 todolist.splice(i, 1);
                                 $(this).remove();
-                                $("ul.done").append('<li class="done addLine">' + donelist[donelist.length - 1] + "</li>");
+                                $("ul.done").append('<li class="done addLine"><img src="./images/mark1.png" class="mark_img" alt="已完成">' + donelist[donelist.length - 1] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
                             }
                         }
                         // getArr();
@@ -43,7 +49,7 @@
                                 todolist.push(donelist[i]);
                                 donelist.splice(i, 1);
                                 $(this).remove();
-                                $("ul.todo").append('<li class="todo">' + todolist[todolist.length - 1] + "</li>");
+                                $("ul.todo").append('<li class="todo"><img src="./images/mark0.png" class="mark_img" alt="未完成">' + todolist[todolist.length - 1] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
                             }
                         }
                         // getArr();
@@ -56,10 +62,10 @@
             // var donelist = new Array("Flat", "Leopard", "Honda");
             $("ul.todo").empty();
             for (var i = 0; i < todolist.length; i++) {
-                $("ul.todo").append('<li class="todo">' + todolist[i] + "</li>");
+                $("ul.todo").append('<li class="todo"><img src="./images/mark0.png" class="mark_img" alt="未完成">' + todolist[i] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
             }
             for (var i = 0; i < todolist.length; i++) {
-                $("ul.done").append('<li class="done addLine">' + donelist[i] + "</li>");
+                $("ul.done").append('<li class="done addLine"><img src="./images/mark1.png" class="mark_img" alt="已完成">' + donelist[i] + "<img src='./images/delete.png' class='delete_img' alt='删除'></li>");
             }
         }
     </script>
@@ -69,21 +75,24 @@
         <div class="todo">
             <h3>待完成事项</h3>
             <ul class="todo">
-                <!-- <li class="todo">This is the todo list</li>
-                <li class="todo">This is the todo list</li>
-                <li class="todo">This is the todo list</li> -->
+                <!-- <li class="todo">This is the todo list<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="todo">This is the todo list<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="todo">This is the todo list<img src='./images/delete.png' class='delete_img' alt='删除'></li> -->
             </ul>
         </div>
         <div class="done">
             <h3>已完成事项</h3>
             <ul class="done">
-                <!-- <li class="done">12456862</li>
-                <li class="done">12456862</li>
-                <li class="done">12456862</li>
-                <li class="done">12456862</li>
-                <li class="done">12456862</li> -->
+                <!-- <li class="done">12456862<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="done">12456862<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="done">12456862<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="done">12456862<img src='./images/delete.png' class='delete_img' alt='删除'></li>
+                <li class="done">12456862<img src='./images/delete.png' class='delete_img' alt='删除'></li> -->
             </ul>
         </div>
+    </div>
+    <div class="window">
+        window
     </div>
 </body>
 </html>
